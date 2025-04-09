@@ -16,7 +16,7 @@ Landing page template: Landing Page Template
 
 Separator:  · 
 // Navigation: about, another-page, <a href="https://example.com">Example</a>, [Example](https://example.com)
-Navigation: <a href="https://ymstnt.dev">Home</a>, <a href="https://ymstnt.com">ymstnt & com.</a>
+Navigation: [Home](https://ymstnt.com), [gepDrive](https://gd.tchfoo.com), [University](https://ymstnt.com/uni)
 Files path: /files/
 Landing page post count: 1
 // Landing page post length: 45 words
@@ -38,7 +38,7 @@ Next page template: <span class="next-page"><a href="$next_page">Next Page →</
 ; web page: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 Timezone: Europe/Budapest
-Date format: F j, Y g:i A
+Date format: Y. F d. G:H
 
 
 ;; Feeds
