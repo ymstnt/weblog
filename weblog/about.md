@@ -25,5 +25,4 @@ Location: /about
 **I hope you enjoy your time here!** 🙂
 
 [^1]: At first, I'll also share projects I've only 'contributed to', as I don't have many fully public projects yet. 
-
 [^2]: That's the plan, at least - I still need to compile a list of all the platforms where I'm active. If a platform isn't mentioned, it's either because I don't use it, it's not mine, or I prefer to keep it private.
