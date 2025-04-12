@@ -19,7 +19,7 @@
         --background: #f8f9fa;
         --link: #0b7285;
         --accent: #868e96;
-        --link-accent: #006bb6;
+        --link-accent: #89b4fa;
       }
 
       @media (prefers-color-scheme: dark) {
@@ -28,7 +28,7 @@
           --background: #222;
           --link: #99e9f2;
           --accent: #ced4da;
-          --link-accent: #006bb6;
+          --link-accent: #89b4fa;
         }
       }
 
@@ -82,6 +82,10 @@
         padding: 0 1em;
       }
 
+      footer {
+        justify-content: center;
+      }
+
       header {
         margin-top: 4em;
       }
@@ -94,7 +98,7 @@
 
       a {
         transition: 0.15s ease;
-        transition-property: color;
+        transition-property: color, text-decoration;
       }
 
       a:link {
@@ -183,6 +187,10 @@
         color: var(--foreground);
       }
 
+      nav a:hover {
+        text-decoration: underline;
+      }
+
       #socials {
         display: flex;
         flex-wrap: wrap;
@@ -228,6 +236,7 @@
     </main>
 
     <footer>
+      <p>© ymstnt, 2025</p>
       <ul id="socials">
         <li>
           <a rel="me" href="https://github.com/ymstnt" title="GitHub">
