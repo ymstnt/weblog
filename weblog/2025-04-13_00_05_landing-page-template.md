@@ -1,0 +1,398 @@
+Type: Template
+Title: Landing Page Template
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{weblog-title}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="darkreader-lock" />
+    {feeds}
+    <style>
+      @import url("https://static.omg.lol/type/font-honey.css");
+      @import url("https://static.omg.lol/type/font-lato-regular.css");
+      @import url("https://static.omg.lol/type/font-lato-bold.css");
+      @import url("https://static.omg.lol/type/font-lato-italic.css");
+      @import url("https://static.omg.lol/type/font-md-io.css");
+      @import url("https://static.omg.lol/type/fontawesome-free/css/all.css");
+
+      :root {
+        --foreground: #212529;
+        --background: #f8f9fa;
+        --link: #0b7285;
+        --accent: #868e96;
+        --link-accent: #89b4fa;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --foreground: #eee;
+          --background: #222;
+          --link: #99e9f2;
+          --accent: #ced4da;
+          --link-accent: #89b4fa;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+        font-size: 120%;
+        color: var(--foreground);
+        background: var(--background);
+      }
+
+      header nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      header nav li {
+        display: inline-block;
+      }
+
+      header nav li a {
+        display: block;
+        text-decoration: none;
+        margin-right: 1em;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "VC Honey Deck", serif;
+        margin: 1rem 0;
+      }
+
+      p,
+      li {
+        line-height: 160%;
+      }
+
+      header,
+      main,
+      footer {
+        max-width: 60em;
+        margin: 2em auto;
+        padding: 0 1em;
+      }
+
+      footer {
+        justify-content: center;
+      }
+
+      header {
+        margin-top: 4em;
+      }
+
+      footer p {
+        margin-top: 5em;
+        font-size: 90%;
+        text-align: center;
+      }
+
+      a {
+        transition: 0.15s ease;
+        transition-property: color, text-decoration;
+      }
+
+      a:link {
+        color: var(--link);
+      }
+
+      a:visited {
+        color: var(--link);
+      }
+
+      a:hover {
+        color: var(--link-accent);
+      }
+
+      a:active {
+        color: var(--link-accent);
+      }
+
+      .post-info,
+      .post-tags {
+        font-size: 85%;
+        color: var(--accent);
+        text-align: right;
+      }
+
+      .post-info i:nth-child(2) {
+        margin-left: 0.75em;
+      }
+
+      .tag {
+        background: var(--accent);
+        color: var(--background) !important;
+        padding: 0.3em 0.4em;
+        margin: 0.8em 0 0 0.4em;
+        border-radius: 0.5em;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      hr {
+        border: 0;
+        height: 1px;
+        background: #333;
+        margin: 2em 0;
+      }
+
+      code {
+        padding: 0.2em 0.3em;
+        border: 1px solid var(--accent);
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+
+      pre,
+      code {
+        font-family: "MD IO 0.4";
+        font-size: 90%;
+      }
+
+      pre code {
+        background: #000;
+        color: #eee;
+        display: inline-block;
+        padding: 1em;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        padding: 0.75em;
+        text-align: left;
+        border: 1px solid var(--accent);
+      }
+
+      .weblog-title a {
+        text-decoration: none;
+        color: var(--foreground);
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      #socials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 1rem auto 0;
+        padding: 0;
+        padding-inline-start: 1.5rem;
+      }
+
+      #socials li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
+      {navigation}
+    </header>
+
+    <main>
+      <h1>Hi, I'm ymstnt</h1>
+      <p>I'm a university student, currently pursuing a degree in Computer Science. 🏛️ I enjoy tinkering with computers, especially Linux (NixOS btw ❄️), self-hosting various things, and coding. ☕ I also like video games, 🎮 writing, and taking care of my aquarium. 🐟</p>
+      <p>On this site, you'll find my projects and my random thoughts that I decide to write down. Enjoy your stay! ☺️</p>
+      <hr>
+      <article>
+        {body}
+        <aside class="post-info">
+          <i class="fa-solid fa-clock"></i> {date}
+        </aside>
+        <aside class="post-tags">{tags}</aside>
+      </article>
+
+      <hr />
+
+      <h2>Recent posts</h2>
+
+      {recent-posts}
+    </main>
+
+    <footer>
+      <p>© ymstnt, 2025</p>
+      <ul id="socials">
+        <li>
+          <a rel="me" href="https://github.com/ymstnt" title="GitHub">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              width="24"
+              height="24"
+              stroke-width="2"
+            >
+              <path
+                d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+              ></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a rel="me" href="https://social.lol/@ymstnt" title="Mastodon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              width="24"
+              height="24"
+              stroke-width="2"
+            >
+              <path
+                d="M18.648 15.254c-1.816 1.763 -6.648 1.626 -6.648 1.626a18.262 18.262 0 0 1 -3.288 -.256c1.127 1.985 4.12 2.81 8.982 2.475c-1.945 2.013 -13.598 5.257 -13.668 -7.636l-.026 -1.154c0 -3.036 .023 -4.115 1.352 -5.633c1.671 -1.91 6.648 -1.666 6.648 -1.666s4.977 -.243 6.648 1.667c1.329 1.518 1.352 2.597 1.352 5.633s-.456 4.074 -1.352 4.944z"
+              ></path>
+              <path
+                d="M12 11.204v-2.926c0 -1.258 -.895 -2.278 -2 -2.278s-2 1.02 -2 2.278v4.722m4 -4.722c0 -1.258 .895 -2.278 2 -2.278s2 1.02 2 2.278v4.722"
+              ></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            rel="me"
+            href="https://bsky.app/profile/ymstnt.com"
+            title="Bluesky"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              width="24"
+              height="24"
+              stroke-width="2"
+            >
+              <path
+                d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z"
+              ></path>
+            </svg>
+          </a>
+        </li>
+        <li class="hidden">
+          <a
+            rel="me"
+            href="https://social.vivaldi.net/@ymstnt0"
+            title="Mastodon (alt)"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              width="24"
+              height="24"
+              stroke-width="2"
+            >
+              <path
+                d="M18.648 15.254c-1.816 1.763 -6.648 1.626 -6.648 1.626a18.262 18.262 0 0 1 -3.288 -.256c1.127 1.985 4.12 2.81 8.982 2.475c-1.945 2.013 -13.598 5.257 -13.668 -7.636l-.026 -1.154c0 -3.036 .023 -4.115 1.352 -5.633c1.671 -1.91 6.648 -1.666 6.648 -1.666s4.977 -.243 6.648 1.667c1.329 1.518 1.352 2.597 1.352 5.633s-.456 4.074 -1.352 4.944z"
+              ></path>
+              <path
+                d="M12 11.204v-2.926c0 -1.258 -.895 -2.278 -2 -2.278s-2 1.02 -2 2.278v4.722m4 -4.722c0 -1.258 .895 -2.278 2 -2.278s2 1.02 2 2.278v4.722"
+              ></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a rel="me" href="https://codeberg.org/ymstnt" title="Codeberg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              width="21"
+              height="21"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 1A11 11 0 0 0 1 12a11 11 0 0 0 1.7 6.4L12 6l9.3 12.4A11 11 0 0 0 23 12 11 11 0 0 0 12 1Z"
+              />
+              <path d="M21.3 18.4 12 6l4.4 16.8a11 11 0 0 0 4.9-4.4Z" />
+            </svg>
+          </a>
+        </li>
+        <li class="hidden">
+          <a rel="me" href="https://gitlab.com/ymstnt" title="Gitlab">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              width="24"
+              height="24"
+              stroke-width="2"
+            >
+              <path d="M21 14l-9 7l-9 -7l3 -11l3 7h6l3 -7z"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a rel="me" href="https://steamcommunity.com/id/ymstnt" title="Steam">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              width="24"
+              height="24"
+              stroke-width="2"
+            >
+              <path
+                d="M16.5 5a4.5 4.5 0 1 1 -.653 8.953l-4.347 3.009l0 .038a3 3 0 0 1 -2.824 3l-.176 0a3 3 0 0 1 -2.94 -2.402l-2.56 -1.098v-3.5l3.51 1.755a2.989 2.989 0 0 1 2.834 -.635l2.727 -3.818a4.5 4.5 0 0 1 4.429 -5.302z"
+              ></path>
+              <circle cx="16.5" cy="9.5" r="1" fill="currentColor"></circle>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
