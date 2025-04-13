@@ -6,7 +6,7 @@
 Weblog title: ymstnt
 Weblog description: ymstnt's random thoughts.
 Author: ymstnt
-// Canonical domain: blog.ymstnt.dev
+Canonical domain: blog.ymstnt.com
 //Landing page: /
 Landing page template: Landing Page Template
 
