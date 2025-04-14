@@ -4,7 +4,7 @@ Title: Landing Page Template
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{weblog-title}</title>
+    <title>{weblog-title}{separator}{post-title}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="darkreader-lock" />
@@ -223,23 +223,9 @@ Title: Landing Page Template
     </header>
 
     <main>
-      <h1>Hi, I'm ymstnt</h1>
-      <p>I'm a university student, currently pursuing a degree in Computer Science. 🏛️ I enjoy tinkering with computers, especially Linux (NixOS btw ❄️), self-hosting various things, and coding. ☕ I also like video games, 🎮 writing, and taking care of my aquarium. 🐟</p>
-      <p>On this site, you'll find my projects and my random thoughts that I decide to write down. Enjoy your stay! ☺️</p>
-      <hr>
-      <article>
-        {body}
-        <aside class="post-info">
-          <i class="fa-solid fa-clock"></i> {date}
-        </aside>
-        <aside class="post-tags">{tags}</aside>
-      </article>
+      {body}
 
-      <hr />
-
-      <h2>Recent posts</h2>
-
-      {recent-posts}
+      <nav>{previous-page} {next-page}</nav>
     </main>
 
     <footer>
